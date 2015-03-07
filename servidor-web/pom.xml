@@ -1,12 +1,62 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>br.com.servidor</groupId>
-    <artifactId>servidorTeste-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../servidorTeste-parent</relativePath>
-  </parent>
-  <artifactId>servidor-web</artifactId>
-  <packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>br.com.servidor</groupId>
+		<artifactId>servidorTeste-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../servidorTeste-parent</relativePath>
+	</parent>
+	<artifactId>servidor-web</artifactId>
+	<packaging>war</packaging>
+
+	<properties>
+		<gwt.version>2.7.0</gwt.version>
+		<gwt.compiler.force>true</gwt.compiler.force>
+		<gwt.compiler.enableClosureCompiler>true</gwt.compiler.enableClosureCompiler>
+		<gwt.module.name>servidorTeste</gwt.module.name>
+		<base.version>1.0.0-SNAPSHOT</base.version>
+	</properties>
+
+	<build>
+
+		<finalName>ServidorTeste</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>${gwt.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>br.com.servidor</groupId>
+			<artifactId>servidor-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm-commons</artifactId>
+			<version>5.0.3</version>
+		</dependency>
+	</dependencies>
+
 </project>
 
