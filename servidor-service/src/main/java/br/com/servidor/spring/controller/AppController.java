@@ -16,7 +16,7 @@ import br.com.servidor.spring.model.Employee;
 import br.com.servidor.spring.service.EmployeeService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/controller")
 public class AppController {
 
 	@Autowired
